@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FormController;
+use App\Http\Controllers\ToDoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +14,7 @@ use App\Http\Controllers\FormController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-
-
-Route::get('/', [FormController::class, 'index']);
-Route::get('/form', [FormController::class, 'showForm']);
-Route::post('/form', [FormController::class, 'processForm']);
-Route::get('/data', [FormController::class, 'showData']);
+Route::get('/', [ToDoController::class, 'index']);
+Route::post('/create', [ToDoController::class, 'store']);
+Route::get('/list', [ToDoController::class, 'showList']);
